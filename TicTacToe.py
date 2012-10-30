@@ -41,17 +41,17 @@ def playAgain():
 def makeMove(board, letter, move):
     board[move] = letter
 
-def isWinner(bo, le):
+def isWinner(board, letter):
     # Given a board and a player's letter, this function returns True if that player has won.
     # We use bo instead of board and le instead of letter so we don't have to type as much.
     return ((bo[7] == le and bo[8] == le and bo[9] == le) or # across the top
-    (bo[4] == le and bo[5] == le and bo[6] == le) or # across the middle
-    (bo[1] == le and bo[2] == le and bo[3] == le) or # across the bottom
-    (bo[7] == le and bo[4] == le and bo[1] == le) or # down the left side
-    (bo[8] == le and bo[5] == le and bo[2] == le) or # down the middle
-    (bo[9] == le and bo[6] == le and bo[3] == le) or # down the right side
-    (bo[7] == le and bo[5] == le and bo[3] == le) or # diagonal
-    (bo[9] == le and bo[5] == le and bo[1] == le)) # diagonal
+    (board[4] == letter and board[5] == letter and board[6] == letter) or 
+    (board[1] == letter and board[2] == letter and board[3] == letter) or 
+    (board[7] == letter and board[4] == letter and board[1] == letter) or 
+    (board[8] == letter and board[5] == letter and board[2] == letter) or 
+    (board[9] == letter and board[6] == letter and board[3] == letter) or 
+    (board[7] == letter and board[5] == letter and board[3] == letter) or 
+    (board[9] == letter and board[5] == letter and board[1] == letter)) 
 
 def getBoardCopy(board):
     # Make a duplicate of the board list and return it the duplicate.
